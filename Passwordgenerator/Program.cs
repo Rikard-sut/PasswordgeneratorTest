@@ -33,7 +33,7 @@ namespace Passwordgenerator
             }
             char digit = GenerateChar(Digits);
             InsertAtRandomPosition(password, digit);
-            for (int i = 1; i <=2; i++)
+            for (int i = 1; i <= 2; i++)
             {
                 char specialChar = GenerateChar(SpecialChars);
                 InsertAtRandomPosition(password, specialChar);
@@ -44,7 +44,7 @@ namespace Passwordgenerator
                 char lastChar = GenerateChar(AllChars);
                 InsertAtRandomPosition(password, lastChar);
             }
-            Console.WriteLine(password);
+            Console.WriteLine(password); //Skriver ut det färdiga lösenordet. 
             Console.ReadKey();
         }
         private static void InsertAtRandomPosition(StringBuilder password, char character)
@@ -52,13 +52,11 @@ namespace Passwordgenerator
             int randomPosition = rnd.Next(password.Length + 1);
             password.Insert(randomPosition, character);
         }
-        private static char GenerateChar (string availableChars)
+        private static char GenerateChar(string availableChars)
         {
             int randomIndex = rnd.Next(availableChars.Length);
             char randomChar = availableChars[randomIndex];
             return randomChar;
         }
-
-
     }
 }
